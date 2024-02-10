@@ -1,0 +1,11 @@
+{
+   "device":"mobile",
+   "title":"notes",
+   "body":"lorem"
+}
+{
+    "name":"sahil",
+    "email":"sahil@gmail.com",
+    "gender":"male",
+    "password":"sahil"
+}
