@@ -4,12 +4,16 @@ const userRouter = require("./routes/userRoutes");
 const postRouter = require("./routes/postRoutes");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const cors = require("cors")
 dotenv.config();
 
 const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+    origin: "*"
+}))
 app.use("/users", userRouter);
 app.use("/posts",postRouter)
 app.get("/", (req, res) => {
