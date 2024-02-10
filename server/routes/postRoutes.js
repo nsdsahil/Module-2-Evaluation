@@ -14,7 +14,7 @@ postRouter.get("/", async (req, res) => {
 		res.send({ err: error });
 	}
 });
-postRouter.delete("/delete/:id",async (req, res) => {
+postRouter.delete("/delete/:id",auth,async (req, res) => {
 	try {
 		const id = req.params.id;
 		const reqId = req.payload.id;
@@ -29,7 +29,7 @@ postRouter.delete("/delete/:id",async (req, res) => {
 		res.send({ err: error, message: error.message });
 	}
 });
-postRouter.post("/add",  async (req, res) => {
+postRouter.post("/add", auth, async (req, res) => {
 	const id = req.payload.id;
 	const { device, title, body } = req.body;
 	console.log(req.body);
@@ -48,7 +48,7 @@ postRouter.post("/add",  async (req, res) => {
 	}
 });
 
-postRouter.patch("/patch/:id", async (req, res) => {
+postRouter.patch("/patch/:id",auth ,async (req, res) => {
 	try {
 		const id = req.payload.id;
 		const reqId = req.params.id;
