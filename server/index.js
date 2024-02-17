@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://notesapp-a7lrr9y4l-sahil-nishads-projects.vercel.app",
+    origin: "https://notesapp-rosy.vercel.app/",
 	credentials: true
 }))
 app.use("/users", userRouter);
